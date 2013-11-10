@@ -1,7 +1,7 @@
 Amazon Smile Redirector Chrome Plugin
 ======================
 
-Chrome Extension to redirect all www.amazon.com urls to the smile.amazon.com
+Chrome Extension to redirect all www.amazon.com urls to smile.amazon.com
 
 Installation
 ============
@@ -13,4 +13,4 @@ Installation
 5. Click 'Load unpacked extension'
 6. Select src folder from this repository
 
-Happy reading.
+Happy shopping.
