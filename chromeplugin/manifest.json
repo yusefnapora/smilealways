@@ -5,6 +5,6 @@
    "description": "Redirects any www.amazon.com page to smile.amazon.com",
    "manifest_version": 2,
    "name": "Amazon smile redirect",
-   "permissions": [ "webRequest", "webRequestBlocking", "\u003Call_urls\u003E", "tabs", "http://www.smilealways.herokuapp.com" ],
+   "permissions": [ "webRequest", "webRequestBlocking", "\u003Call_urls\u003E", "tabs", "http://www.smilealways.io/*" ],
    "version": "0.1"
 }

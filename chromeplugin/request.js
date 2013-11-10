@@ -7,10 +7,9 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
 
 function incrementCounter() {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://smilealways.herokuapp.com/newredirect", true);
+    xhr.open("GET", "http://smilealways.io/newredirect", true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
-        // JSON.parse does not evaluate the attacker's scripts.
         var resp = JSON.parse(xhr.responseText);
       }
     }
