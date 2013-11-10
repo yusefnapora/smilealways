@@ -1,10 +1,7 @@
-Guardian Mobile Redirector Chrome Plugin
+Amazon Smile Redirector Chrome Plugin
 ======================
 
-Chrome Extension to redirect all www.theguardian.com urls to the mobile site using the query string: www.guardian.co.uk?view=mobile.
-
-Wouldn't you rather view the Guardian's lovely responsive mobile site than their old desktop site?
-
+Chrome Extension to redirect all www.amazon.com urls to the smile.amazon.com
 
 Installation
 ============
