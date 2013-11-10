@@ -14,13 +14,7 @@ function detectRedirect(details) {
     var redirecturl = "redirect.html";
     
     if (url != null) {
-// Debug code
-var bkg = chrome.extension.getBackgroundPage();
-if (bkg != null) {
-    bkg.console.log(url.match(amazonurl));
-}
-// END DEBUG CODE:
-
+        
         // Don't try and redirect pages that will already be redirected
         if(url.match(redirecturl) == null) {
 
