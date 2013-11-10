@@ -178,6 +178,7 @@ STATICFILES_DIRS = (
             os.path.join(BASE_DIR, 'static'),
             )
 
+print STATICFILES_DIRS
 
 # If local dev machine, check for local settings
 if bool(os.environ.get('LOCAL_DEV', False)):

@@ -1,10 +1,15 @@
 {
-   "background": {
-      "scripts": [ "request.js" ]
-   },
-   "description": "Redirects any www.amazon.com page to smile.amazon.com",
-   "manifest_version": 2,
-   "name": "Amazon smile redirect",
-   "permissions": [ "webRequest", "webRequestBlocking", "\u003Call_urls\u003E", "tabs", "http://www.smilealways.io/*" ],
-   "version": "0.1"
+    "background": {
+       "scripts": [ "request.js" ]
+    },
+    "description": "Redirects any www.amazon.com page to smile.amazon.com",
+    "icons": { "16": "SmileAlwaysLogo-16.png",
+               "48": "SmileAlwaysLogo-48.png",
+               "128": "SmileAlwaysLogo-128.png" },
+    "manifest_version": 2,
+    "name": "SmileAlways",
+    "permissions": [ "webRequest", "webRequestBlocking", "\u003Call_urls\u003E", "tabs", "http://www.smilealways.io/*" ],
+    "version": "0.1",
+    "homepage_url": "http://www.smilealways.io",
+    "author":"Josh Haimson and Dan Elitzer"
 }
