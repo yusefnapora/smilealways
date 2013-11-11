@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
+<html lang="en"> <head>
         <meta charset="utf-8">
         <title>AlwaysSmile Chrome Extension</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,23 +24,23 @@
 
     <body>
         <div id="header">
-            <h1>SmileAlways</h1>
         </div>
         <div class="container" id="content">
             <div id="wrapper">
-                <h2>Automatically redirects you to <a href="http://smile.amazon.com">smile.amazon.com</a> to make donating to charity easier!</h2>
-                <a href="https://chrome.google.com/webstore/detail/smilealways/jgpmhnmjbhgkhpbgelalfpplebgfjmbf"><img src="{% static "img/ChromeWebStore.png"%}" alt="Chrome Web Store" id="webstore"></a>
-                <h2>{{ redirectCount }} redirects have been made with this extension!</h2>
-                <h3>
-                    Made by:<br>
-                    Dan Elitzer - <a href="http://www.twitter.com/delitzer">@delitzer</a><br>
-                    Josh Haimson - <a href="http://www.twitter.com/just_joshing">@just_joshing</a>
-                </h3>
 
+                <h1>SmileAlways</h1>
+                <h3>SmileAlways automatically redirects you to <br><a href="http://smile.amazon.com">smile.amazon.com</a> to make donating to charity easier!</h3>
+                <a href="https://chrome.google.com/webstore/detail/smilealways/jgpmhnmjbhgkhpbgelalfpplebgfjmbf"><img src="{% static "img/ChromeWebStore.png"%}" alt="Chrome Web Store" id="webstore"></a>
+                <h4>{{ redirectCount }} redirects have been made with this extension!</h4>
             </div>
         </div>
         <div id="footer">
-            <p>Image credit: <a href="https://secure.flickr.com/photos/dancingtuna/6112684438/">Flickr user Dancing Tuna</a></p>
+            <h4>
+                Built by:
+                Josh Haimson - <a href="http://www.twitter.com/just_joshing">@just_joshing</a> | 
+                Dan Elitzer - <a href="http://www.twitter.com/delitzer">@delitzer</a> | 
+            Image credit: <a href="https://secure.flickr.com/photos/dancingtuna/6112684438/">Flickr user Dancing Tuna</a>
+        </h4>
         </div>
 
     </body>

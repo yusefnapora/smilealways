@@ -3,7 +3,7 @@ html {
 }
 
 body { 
-    background: url(../img/bg-smile.jpg) no-repeat center center fixed; 
+    background: url(../img/smile-blur-dark.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -13,33 +13,56 @@ body {
 }
 
 #header {
-    height: 15%;
+    height: 6%;
     width: 100%;
-    background-color: #888;
-    opacity: 0.9;
     text-align: center;
     margin-top: -10px;
     vertical-align: middle;
 }
 
-#header h1 {
-    position: relative;
-    top: .5em;
+a {
+    color: #ccc;
 }
 
+
+
 h1 {
+    font-size: 6em;
+    margin-bottom: .5em;
+}
+
+h1, h2, h3, h4 {
     color: #fff;
-    font-size: 4em;
+}
+
+h3, h4 {
+    font-weight: normal;
 }
 
 
 #webstore {
-    margin-bottom: 1em;
+
+    margin-top: 2em;
+    margin-bottom: 4em;
+
+    border-radius: 35px;
+    border: solid 1px #888;
+    background-image: -webkit-gradient(
+                    linear,
+                    left bottom,
+                    left top,
+                    color-stop(0, #DFDDEB),
+                    color-stop(1, #FFFFFF)
+                    );
+     background-image: -o-linear-gradient(top, #DFDDEB 0%, #FFFFFF 100%);
+     background-image: -moz-linear-gradient(top, #DFDDEB 0%, #FFFFFF 100%);
+     background-image: -webkit-linear-gradient(top, #DFDDEB 0%, #FFFFFF 100%);
+     background-image: -ms-linear-gradient(top, #DFDDEB 0%, #FFFFFF 100%);
+     background-image: linear-gradient(to top, #DFDDEB 0%, #FFFFFF 100%); 
+     
 }
 
 #content {
-    background-color: #FEFF99;
-    opacity: 0.9;
     height: 100%;
     margin: 0 auto;
     text-align: center;
@@ -53,16 +76,10 @@ h1 {
 
 
 #footer {
-    background-color: #888;
-    height: 10%;
+    height: 7%;
     width: 100%;
     text-align: center;
-    opacity: 0.98;
     position: absolute;
     bottom: 0;
-}
-
-#footer p {
-    padding-top: 1em;
-    color: #fff;
+    border-top: 2px dotted #888;
 }
