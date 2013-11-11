@@ -49,7 +49,11 @@ h3 {
     margin-top: 10%;
     margin-bottom: 20%;
     text-align: center;
-    display: block;
+    padding-right: 10px;
+}
+
+#mobile-desc {
+    text-align: center;
     padding-right: 10px;
 }
 
