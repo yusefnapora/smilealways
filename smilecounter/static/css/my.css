@@ -18,12 +18,18 @@ body {
     background-color: #888;
     opacity: 0.9;
     text-align: center;
-    padding-top: 3.2%;
+    padding-top: 2.5%;
+    padding-bottom: 0.7%;
 }
 
 h1 {
     color: #fff;
     font-size: 4em;
+}
+
+
+#webstore {
+    margin-bottom: 1em;
 }
 
 #content {
@@ -32,11 +38,23 @@ h1 {
     height: 70%;
     margin: 0 auto;
     text-align: center;
+    padding: 2em;
 }
+
+#wrapper {
+    margin: 0 auto;
+    width: 50%;
+}
+
 
 #footer {
     background-color: #888;
-    height: 15%;
-
+    height: 8%;
+    text-align: center;
     opacity: 0.9;
+}
+
+#footer p {
+    padding-top: 1em;
+    color: #fff;
 }
