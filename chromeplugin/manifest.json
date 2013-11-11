@@ -8,8 +8,8 @@
                "128": "SmileAlwaysLogo-128.png" },
     "manifest_version": 2,
     "name": "Smile Always",
-    "permissions": [ "webRequest", "webRequestBlocking", "\u003Call_urls\u003E", "tabs", "http://www.smilealways.io/*" ],
-    "version": "0.2",
+    "permissions": [ "webRequest", "webRequestBlocking", "http://www.amazon.com/*", "https://www.amazon.com/*", "http://www.smilealways.io/*" ],
+    "version": "0.3",
     "homepage_url": "http://www.smilealways.io",
     "author":"Josh Haimson and Dan Elitzer"
 }
