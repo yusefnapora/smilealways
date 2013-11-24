@@ -6,9 +6,7 @@ from pytz import UTC
 from django.utils import simplejson
 
 def home(request):
-    redirectCount = SmileRedirect.objects.count()
-    print redirectCount
-    return render(request, 'smilecounter/index.html', {'redirectCount':redirectCount})
+    return render(request, 'smilecounter/index.html', {})
 
 def addRedirect(request):
     SmileRedirect.objects.create(time=UTC.localize(datetime.now()))
