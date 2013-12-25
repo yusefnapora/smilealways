@@ -11,7 +11,7 @@ function detectRedirect(details) {
     var amazonurl = "www.amazon.com";
     var smileurl = "smile.amazon.com";
     // string that all amazon redirect urls contain
-    var redirecturl = "redirect.html";
+    var redirecturl = "redirect=true";
 
    
     if (url != null) {
