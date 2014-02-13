@@ -11,6 +11,7 @@ function detectRedirect(details) {
     var amazonurl = "www.amazon.com";
     var smileurl = "smile.amazon.com";
     // string that all amazon redirect urls contain
+    var readerurl = "read.amazon.com";
     var redirecturl1 = "redirect=true";
     var redirecturl2 = "redirect.html";
     var affiliateurl1 = "/dp/";
@@ -20,7 +21,7 @@ function detectRedirect(details) {
     if (url != null) {
         
         // Don't try and redirect pages that will already be redirected or are associated with the affiliate program
-        if(url.match(redirecturl1) == null && url.match(redirecturl2) == null && url.match(affiliateurl1) == null && url.match(affiliateurl2) == null) {
+        if(url.match(readerurl)) == null && url.match(redirecturl1) == null && url.match(redirecturl2) == null && url.match(affiliateurl1) == null && url.match(affiliateurl2) == null) {
 
             // Check non-secure links
             if(url.match(http + amazonurl) != null) {
