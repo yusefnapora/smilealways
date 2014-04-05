@@ -13,13 +13,10 @@ function detectRedirect(details) {
     // ignore links with these strings in them
     var redirecturl1 = "redirect=true";
     var redirecturl2 = "redirect.html";
-    var affiliateurl1 = "/dp/";
-    var affiliateurl2 = "/gp/";
-
    
     if (url != null) {
         
-        // Don't try and redirect pages that will already be redirected or are associated with the affiliate program
+        // Don't try and redirect pages that will already be redirected
         if(url.match(redirecturl1) == null && url.match(redirecturl2) == null) {
 
             // Check non-secure links
