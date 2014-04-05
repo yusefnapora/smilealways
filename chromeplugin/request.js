@@ -20,7 +20,7 @@ function detectRedirect(details) {
     if (url != null) {
         
         // Don't try and redirect pages that will already be redirected or are associated with the affiliate program
-        if(url.match(redirecturl1) == null && url.match(redirecturl2) == null && url.match(affiliateurl1) == null && url.match(affiliateurl2) == null) {
+        if(url.match(redirecturl1) == null && url.match(redirecturl2) == null) {
 
             // Check non-secure links
             if(url.match(http + amazonurl) != null) {
