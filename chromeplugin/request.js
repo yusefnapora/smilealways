@@ -1,7 +1,8 @@
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
     return detectRedirect(details);
 }, {
-    urls : ["<all_urls>"]
+    urls : ["<all_urls>"],
+    types: ["main_frame","sub_frame"]
 }, ["blocking"]);
 
 function detectRedirect(details) {
