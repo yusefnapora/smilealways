@@ -12,13 +12,13 @@ function detectRedirect(details) {
     var amazonurl = "www.amazon.com";
     var smileurl = "smile.amazon.com";
     // ignore links with these strings in them
-    var redirecturl1 = "redirect=true";
-    var redirecturl2 = "redirect.html";
+    var filter = "(redirect=true)|(redirect.html)|(/gp/wishlist)|(aws.amazon.com)";
+    
    
     if (url != null) {
         
-        // Don't try and redirect pages that will already be redirected
-        if(url.match(redirecturl1) == null && url.match(redirecturl2) == null) {
+        // Don't try and redirect pages that are in our filter
+        if(url.match(filter) == null) {
 
             // Check non-secure links
             if(url.match(http + amazonurl) != null) {
