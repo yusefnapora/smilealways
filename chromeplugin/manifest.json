@@ -8,8 +8,12 @@
                "128": "SA-128x128.png" },
     "manifest_version": 2,
     "name": "Smile Always",
-    "permissions": [ "webRequest", "webRequestBlocking", "http://www.amazon.com/*", "https://www.amazon.com/*" ],
-    "version": "0.84",
+    "permissions": [ "webRequest", "webRequestBlocking", "declarativeContent", "tabs", "http://www.amazon.com/*", "https://www.amazon.com/*" ],
+    "version": "0.85",
     "homepage_url": "http://www.smilealways.io",
-    "author":"Josh Haimson and Dan Elitzer"
+    "author":"Josh Haimson and Dan Elitzer",
+    "page_action": {
+        "default_title" : "SmileAlways",
+        "default_icon" : "happy-smile.png"
+    }
 }

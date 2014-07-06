@@ -1,3 +1,79 @@
+/************************ PAGE ACTION CODE ***********************/
+var amazonPattern = '(smile|www)\.amazon\.com';
+var showPageActionOnAmazon = {
+  conditions: [
+    // When a page has an amazon url
+    new chrome.declarativeContent.PageStateMatcher({
+      pageUrl: { urlMatches: amazonPattern, schemes: ['http','https'] },
+    })
+  ],
+  // show the page action.
+  actions: [new chrome.declarativeContent.ShowPageAction() ]
+}
+
+// Update the declarative rules on install or upgrade.
+chrome.runtime.onInstalled.addListener(function() {
+  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+    chrome.declarativeContent.onPageChanged.addRules([showPageActionOnAmazon]);
+  });
+});
+
+// keep track of current tab
+var lastTabId = 0;
+//var amazonTabs = []
+// keep track of SA state
+var smileAlwaysOn = true;
+var smileStatus = 'on';
+var altStatus = 'off';
+
+// Track current tab
+chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    lastTabId = tabs[0].id;
+});
+
+// Update pageAction when page is update or activated
+chrome.tabs.onActivated.addListener(function(activeInfo) {
+    lastTabId = activeInfo.tabId;
+    updateSpecificPageAction(lastTabId);
+});
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+    updateSpecificPageAction(lastTabId);
+});
+
+// Toggle on pageAction clicked events
+chrome.pageAction.onClicked.addListener(function(tab) {
+    smileAlwaysOn = !smileAlwaysOn;
+    smileStatus = (smileAlwaysOn? 'on' : 'off');
+    altStatus = (smileAlwaysOn? 'off' : 'on');
+
+    updateSpecificPageAction(lastTabId);
+    alert('SmileAlways has been turned ' + smileStatus + '.' );
+});
+
+/*
+// Update all pages with proper info
+function updatePageActionInfo() {
+    chrome.tabs.query({}, function(tabs) {
+        amazonTabs = tabs;
+        console.log(tabs);
+        for(var i=0; i< tabs.length; i++) {
+            updateSpecificPageAction(tabs[i].tabId);
+        }
+    });
+}
+*/
+
+// Update page action info on a specific tab
+function updateSpecificPageAction(pageActionTabId) {
+    chrome.pageAction.setTitle({title:'SmileAlways is ' + smileStatus + '.' 
+                                       + ' Click to turn ' + altStatus + '.',
+                                tabId: pageActionTabId });
+    var imgPath = smileAlwaysOn ? 'happy-smile.png' : 'sad-smile.png';
+    chrome.pageAction.setIcon({path: imgPath, tabId: pageActionTabId}); 
+}
+
+
+/************************ REDIRECT CODE ***********************/
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
     return detectRedirect(details);
 }, {
@@ -5,10 +81,12 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
     types: ["main_frame","sub_frame"]
 }, ["blocking"]);
 
+
 function detectRedirect(details) {
+    updateSpecificPageAction(lastTabId);
     var url = details.url;
     
-    if (url == null) {
+    if (url == null || !smileAlwaysOn ) {
         return;
     }
     
@@ -16,7 +94,7 @@ function detectRedirect(details) {
     var https = "https://";
     var amazonurl = "www.amazon.com";
     // ignore links with these strings in them
-    var filter = "(sa-no-redirect=)|(redirect=true)|(redirect.html)|(/gp/wishlist)|(aws.amazon.com)";
+    var filter = "(sa-no-redirect=)|(redirect=true)|(redirect.html)|(/gp/dmusic/cloudplayer)|(/gp/wishlist)|(aws.amazon.com)";
     
     // Don't try and redirect pages that are in our filter
     if (url.match(filter) != null) {
